@@ -1,0 +1,25 @@
+{
+  "name": "csv-analytics-mcp",
+  "description": "MEOK AI Labs \u2014 Spreadsheet and CSV analysis toolkit for AI agents. Load CSV files, query data",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/csv-analytics-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "load_csv",
+    "query_data",
+    "describe_columns",
+    "aggregate",
+    "export_chart_data",
+    "pivot_table"
+  ],
+  "categories": [
+    "Data Science",
+    "Analytics"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}

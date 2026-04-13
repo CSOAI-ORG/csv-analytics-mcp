@@ -5,14 +5,25 @@ build-backend = "hatchling.build"
 [project]
 name = "csv-analytics-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — csv-analytics-mcp MCP Server"
+description = "MEOK AI Labs — Spreadsheet and CSV analysis toolkit for AI agents. Load CSV files, query data"
+authors = [{name="MEOK AI Labs", email="nicholas@meok.ai"}]
 readme = "README.md"
-license = {file = "LICENSE"}
+license = {text = "MIT"}
 requires-python = ">=3.10"
-authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
-keywords = ["mcp", "ai", "meok", "model-context-protocol"]
-dependencies = ["mcp>=1.0.0"]
+keywords = ["mcp", "mcp-server", "model-context-protocol", "claude", "ai-tools", "meok-ai-labs", "csv-analytics", "data-analysis", "spreadsheet", "tabular-data", "statistics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "mcp>=1.0.0",
+]
 
 [project.urls]
 Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/csv-analytics-mcp"
+Documentation = "https://meok.ai/docs/csv-analytics-mcp"
+"Bug Tracker" = "https://github.com/CSOAI-ORG/csv-analytics-mcp/issues"

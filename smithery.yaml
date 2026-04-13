@@ -1,0 +1,10 @@
+name: csv-analytics-mcp
+description: "MEOK AI Labs — Spreadsheet and CSV analysis toolkit for AI agents. Load CSV files, query data"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/csv-analytics-mcp
+license: MIT
+categories: [Data Science, Analytics]
+tags: [csv-analytics, data-analysis, spreadsheet, tabular-data, statistics]
+runtime: python
+entrypoint: server.py
