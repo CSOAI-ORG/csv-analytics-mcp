@@ -66,7 +66,7 @@ def _df_to_dict(df, limit: int = 100) -> dict:
             val = row[col]
             if pd.isna(val):
                 record[col] = None
-            elif isinstance(val, (datetime,)):
+            elif isinstance(val, (datetime)):
                 record[col] = val.isoformat()
             elif hasattr(val, 'item'):  # numpy types
                 record[col] = val.item()
@@ -274,8 +274,7 @@ def _pivot_table(name: str, index: str, columns: str, values: str,
     try:
         pivot = pd.pivot_table(
             df, values=values, index=index, columns=columns,
-            aggfunc=aggfunc, fill_value=0,
-        )
+            aggfunc=aggfunc, fill_value=0)
     except Exception as e:
         return {"error": f"Pivot table error: {e}"}
 
@@ -308,8 +307,7 @@ def _pivot_table(name: str, index: str, columns: str, values: str,
 # ---------------------------------------------------------------------------
 mcp = FastMCP(
     "CSV Analytics MCP",
-    instructions="Spreadsheet and CSV analysis toolkit: load files, filter/query data, compute statistics, create aggregations, pivot tables, and export chart-ready data. By MEOK AI Labs.",
-)
+    instructions="Spreadsheet and CSV analysis toolkit: load files, filter/query data, compute statistics, create aggregations, pivot tables, and export chart-ready data. By MEOK AI Labs.")
 
 
 @mcp.tool()
