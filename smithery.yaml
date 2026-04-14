@@ -1,10 +1,95 @@
 name: csv-analytics-mcp
-description: "MEOK AI Labs — Spreadsheet and CSV analysis toolkit for AI agents. Load CSV files, query data"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/csv-analytics-mcp
-license: MIT
-categories: [Data Science, Analytics]
-tags: [csv-analytics, data-analysis, spreadsheet, tabular-data, statistics]
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: load_csv
+  description: Load a CSV file into memory for analysis. The dataset is stored under
+  parameters:
+  - name: file_path
+    type: string
+    required: true
+  - name: name
+    type: string
+    required: false
+  - name: delimiter
+    type: string
+    required: false
+  - name: encoding
+    type: string
+    required: false
+- name: query_data
+  description: Query a loaded dataset with filtering, column selection, and sorting.
+  parameters:
+  - name: name
+    type: string
+    required: true
+  - name: filter_expr
+    type: string
+    required: false
+  - name: columns
+    type: array
+    required: false
+  - name: sort_by
+    type: string
+    required: false
+  - name: ascending
+    type: boolean
+    required: false
+  - name: limit
+    type: integer
+    required: false
+- name: describe_columns
+  description: 'Get detailed statistics for every column in a dataset:'
+  parameters:
+  - name: name
+    type: string
+    required: true
+- name: aggregate
+  description: Aggregate data with GROUP BY and compute metrics.
+  parameters:
+  - name: name
+    type: string
+    required: true
+  - name: group_by
+    type: array
+    required: true
+  - name: metrics
+    type: object
+    required: true
+- name: export_chart_data
+  description: Export data in a chart-ready format. Output is compatible with Chart.js,
+  parameters:
+  - name: name
+    type: string
+    required: true
+  - name: x_column
+    type: string
+    required: true
+  - name: y_columns
+    type: array
+    required: true
+  - name: chart_type
+    type: string
+    required: false
+  - name: limit
+    type: integer
+    required: false
+- name: pivot_table
+  description: Create a pivot table from a dataset. Reshapes data by grouping rows
+  parameters:
+  - name: name
+    type: string
+    required: true
+  - name: index
+    type: string
+    required: true
+  - name: columns
+    type: string
+    required: true
+  - name: values
+    type: string
+    required: true
+  - name: aggfunc
+    type: string
+    required: false

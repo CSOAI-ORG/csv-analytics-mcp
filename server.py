@@ -12,6 +12,11 @@ Install: pip install mcp pandas
 Run:     python server.py
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import io
 import json
 import os
@@ -311,7 +316,7 @@ mcp = FastMCP(
 
 
 @mcp.tool()
-def load_csv(file_path: str, name: str = "", delimiter: str = ",", encoding: str = "utf-8") -> dict:
+def load_csv(file_path: str, name: str = "", delimiter: str = ",", encoding: str = "utf-8", api_key: str = "") -> dict:
     """Load a CSV file into memory for analysis. The dataset is stored under
     a name (defaults to filename) and can be referenced in subsequent calls.
 
@@ -321,6 +326,10 @@ def load_csv(file_path: str, name: str = "", delimiter: str = ",", encoding: str
         delimiter: Column delimiter (default: comma)
         encoding: File encoding (default: utf-8)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -332,7 +341,7 @@ def load_csv(file_path: str, name: str = "", delimiter: str = ",", encoding: str
 
 @mcp.tool()
 def query_data(name: str, filter_expr: str = "", columns: Optional[list[str]] = None,
-               sort_by: str = "", ascending: bool = True, limit: int = 100) -> dict:
+               sort_by: str = "", ascending: bool = True, limit: int = 100, api_key: str = "") -> dict:
     """Query a loaded dataset with filtering, column selection, and sorting.
 
     Uses pandas query syntax for filters:
@@ -348,6 +357,10 @@ def query_data(name: str, filter_expr: str = "", columns: Optional[list[str]] = 
         ascending: Sort order (default: True)
         limit: Max rows to return (default: 100)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -358,7 +371,7 @@ def query_data(name: str, filter_expr: str = "", columns: Optional[list[str]] = 
 
 
 @mcp.tool()
-def describe_columns(name: str) -> dict:
+def describe_columns(name: str, api_key: str = "") -> dict:
     """Get detailed statistics for every column in a dataset:
     - Numeric columns: mean, std, min, max, median, quartiles
     - Categorical columns: unique count, top 5 values with frequencies
@@ -366,6 +379,10 @@ def describe_columns(name: str) -> dict:
     Args:
         name: Dataset name (from load_csv)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -376,7 +393,7 @@ def describe_columns(name: str) -> dict:
 
 
 @mcp.tool()
-def aggregate(name: str, group_by: list[str], metrics: dict[str, str]) -> dict:
+def aggregate(name: str, group_by: list[str], metrics: dict[str, str], api_key: str = "") -> dict:
     """Aggregate data with GROUP BY and compute metrics.
 
     Supported aggregation functions: sum, mean, min, max, count, median, std, first, last, nunique
@@ -386,6 +403,10 @@ def aggregate(name: str, group_by: list[str], metrics: dict[str, str]) -> dict:
         group_by: List of columns to group by (e.g. ["department", "year"])
         metrics: Dict of column -> aggregation function (e.g. {"salary": "mean", "id": "count"})
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -397,7 +418,7 @@ def aggregate(name: str, group_by: list[str], metrics: dict[str, str]) -> dict:
 
 @mcp.tool()
 def export_chart_data(name: str, x_column: str, y_columns: list[str],
-                      chart_type: str = "bar", limit: int = 50) -> dict:
+                      chart_type: str = "bar", limit: int = 50, api_key: str = "") -> dict:
     """Export data in a chart-ready format. Output is compatible with Chart.js,
     Plotly, or any visualization library. Includes labels and datasets arrays.
 
@@ -408,6 +429,10 @@ def export_chart_data(name: str, x_column: str, y_columns: list[str],
         chart_type: Suggested chart type (bar, line, scatter, pie)
         limit: Max data points (default: 50)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -419,7 +444,7 @@ def export_chart_data(name: str, x_column: str, y_columns: list[str],
 
 @mcp.tool()
 def pivot_table(name: str, index: str, columns: str, values: str,
-                aggfunc: str = "mean") -> dict:
+                aggfunc: str = "mean", api_key: str = "") -> dict:
     """Create a pivot table from a dataset. Reshapes data by grouping rows
     and spreading column values, similar to Excel pivot tables.
 
@@ -430,6 +455,10 @@ def pivot_table(name: str, index: str, columns: str, values: str,
         values: Column to aggregate
         aggfunc: Aggregation function (mean, sum, count, min, max, median, std)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}

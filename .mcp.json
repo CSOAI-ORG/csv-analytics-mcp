@@ -1,25 +1,168 @@
 {
   "name": "csv-analytics-mcp",
-  "description": "MEOK AI Labs \u2014 Spreadsheet and CSV analysis toolkit for AI agents. Load CSV files, query data",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/csv-analytics-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
   "tools": [
-    "load_csv",
-    "query_data",
-    "describe_columns",
-    "aggregate",
-    "export_chart_data",
-    "pivot_table"
-  ],
-  "categories": [
-    "Data Science",
-    "Analytics"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "load_csv",
+      "description": "Load a CSV file into memory for analysis. The dataset is stored under",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "delimiter": {
+            "type": "string"
+          },
+          "encoding": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ]
+      }
+    },
+    {
+      "name": "query_data",
+      "description": "Query a loaded dataset with filtering, column selection, and sorting.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "filter_expr": {
+            "type": "string"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "sort_by": {
+            "type": "string"
+          },
+          "ascending": {
+            "type": "boolean"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "describe_columns",
+      "description": "Get detailed statistics for every column in a dataset:",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "aggregate",
+      "description": "Aggregate data with GROUP BY and compute metrics.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "group_by": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metrics": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "name",
+          "group_by",
+          "metrics"
+        ]
+      }
+    },
+    {
+      "name": "export_chart_data",
+      "description": "Export data in a chart-ready format. Output is compatible with Chart.js,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "x_column": {
+            "type": "string"
+          },
+          "y_columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "chart_type": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "x_column",
+          "y_columns"
+        ]
+      }
+    },
+    {
+      "name": "pivot_table",
+      "description": "Create a pivot table from a dataset. Reshapes data by grouping rows",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "index": {
+            "type": "string"
+          },
+          "columns": {
+            "type": "string"
+          },
+          "values": {
+            "type": "string"
+          },
+          "aggfunc": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "index",
+          "columns",
+          "values"
+        ]
+      }
+    }
+  ]
 }
