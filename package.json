@@ -1,7 +1,7 @@
 {
   "name": "csv-analytics-mcp",
   "version": "1.0.0",
-  "description": "MEOK AI Labs \u2014 csv analytics MCP Server",
+  "description": "MCP server for csv analytics. Features load csv, query data, describe columns. From MEOK AI Labs.",
   "main": "server.py",
   "mcp": {
     "name": "csv analytics",

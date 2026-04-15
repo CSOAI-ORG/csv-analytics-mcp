@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 [project]
 name = "csv-analytics-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — csv-analytics-mcp"
+description = "MCP server for csv analytics. Features load csv, query data, describe columns. From MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]

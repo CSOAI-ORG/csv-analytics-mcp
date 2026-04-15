@@ -1,6 +1,6 @@
 {
   "name": "csv-analytics-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Spreadsheet and CSV analysis toolkit: load files, filter/query data, compute statistics, create aggr",
+  "description": "MCP server for csv analytics. Features load csv, query data, describe columns. From MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
