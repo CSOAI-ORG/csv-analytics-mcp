@@ -1,6 +1,6 @@
 {
   "name": "csv-analytics-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Spreadsheet and CSV analysis toolkit: load files, filter/query data, compute statistics, create aggr",
   "version": "1.0.0",
   "tools": [
     {
@@ -40,11 +40,7 @@
             "type": "string"
           },
           "columns": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
+            "type": "array"
           },
           "sort_by": {
             "type": "string"
@@ -86,10 +82,7 @@
             "type": "string"
           },
           "group_by": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "metrics": {
             "type": "object"
@@ -115,10 +108,7 @@
             "type": "string"
           },
           "y_columns": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "chart_type": {
             "type": "string"

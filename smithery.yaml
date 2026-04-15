@@ -1,6 +1,6 @@
 name: csv-analytics-mcp
-description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
-  \ everyone."
+description: 'Spreadsheet and CSV analysis toolkit: load files, filter/query data,
+  compute statistics, create aggr'
 version: 1.0.0
 tools:
 - name: load_csv
