@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "CSOAI-ORG/csv-analytics-mcp",
+  "version": "1.0.0",
+  "description": "Csv Analytics MCP Server by MEOK AI Labs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/csv-analytics-mcp",
+    "source": "https://github.com/CSOAI-ORG/csv-analytics-mcp"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "csv-analytics-mcp",
+      "version": "1.0.0",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
