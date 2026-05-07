@@ -1,3 +1,5 @@
+[![csv-analytics-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/csv-analytics-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/csv-analytics-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/csv-analytics-mcp)](https://github.com/CSOAI-ORG/csv-analytics-mcp/stargazers)
