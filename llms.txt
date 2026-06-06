@@ -1,33 +1,39 @@
-# Csv Analytics MCP
-
-> Spreadsheet and CSV analysis toolkit: load files, filter/query data, compute statistics, create a...
-
-`csv-analytics-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# csv-analytics-mcp
+# **MCP server for csv analytics mcp operations**
 
 ## Install
-
 ```bash
 pip install csv-analytics-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx csv-analytics-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `load_csv` — Load a CSV file into memory for analysis. The dataset is stored under
-- `query_data` — Query a loaded dataset with filtering, column selection, and sorting.
-- `describe_columns` — Get detailed statistics for every column in a dataset:
-- `aggregate` — Aggregate data with GROUP BY and compute metrics.
-- `export_chart_data` — Export data in a chart-ready format. Output is compatible with Chart.js,
-- `pivot_table` — Create a pivot table from a dataset. Reshapes data by grouping rows
+### `load_csv`
+Load a CSV file into memory for analysis. The dataset is stored under
 
-## Links
+### `query_data`
+Query a loaded dataset with filtering, column selection, and sorting.
 
-- Source: https://github.com/CSOAI-ORG/csv-analytics-mcp
-- PyPI: https://pypi.org/project/csv-analytics-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `describe_columns`
+Get detailed statistics for every column in a dataset:
+
+### `aggregate`
+Aggregate data with GROUP BY and compute metrics.
+
+### `export_chart_data`
+Export data in a chart-ready format. Output is compatible with Chart.js,
+
+### `pivot_table`
+Create a pivot table from a dataset. Reshapes data by grouping rows
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

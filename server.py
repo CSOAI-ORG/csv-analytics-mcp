@@ -14,7 +14,6 @@ Run:     python server.py
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import io
@@ -357,7 +356,7 @@ def load_csv(file_path: str, name: str = "", delimiter: str = ",", encoding: str
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -403,7 +402,7 @@ def query_data(name: str, filter_expr: str = "", columns: Optional[list[str]] = 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -454,7 +453,7 @@ def describe_columns(name: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -493,7 +492,7 @@ def aggregate(name: str, group_by: list[str], metrics: dict[str, str], api_key: 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -548,7 +547,7 @@ def export_chart_data(name: str, x_column: str, y_columns: list[str],
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -602,7 +601,7 @@ def pivot_table(name: str, index: str, columns: str, values: str,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -613,5 +612,8 @@ def pivot_table(name: str, index: str, columns: str, values: str,
         return {"error": str(e)}
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

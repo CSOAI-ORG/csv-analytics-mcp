@@ -1,0 +1,31 @@
+{
+  "name": "csv-analytics-mcp",
+  "title": "Csv Analytics Mcp",
+  "description": "MCP server for csv analytics. Features load csv, query data, describe columns. From MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "load_csv"
+    },
+    {
+      "name": "query_data"
+    },
+    {
+      "name": "describe_columns"
+    },
+    {
+      "name": "aggregate"
+    },
+    {
+      "name": "export_chart_data"
+    },
+    {
+      "name": "pivot_table"
+    }
+  ]
+}

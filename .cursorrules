@@ -1,0 +1,9 @@
+# csv-analytics-mcp - Auto-trigger Rules
+
+When the user asks about csv analytics, use csv-analytics-mcp tools: load_csv, query_data, describe_columns, aggregate, export_chart_data
+
+**MCP server for csv analytics mcp operations**
+
+Install: `pip install csv-analytics-mcp`
+
+By MEOK AI Labs — MIT licensed.
