@@ -1,3 +1,4 @@
+<!-- mcp-name: CSOAI-ORG/csv-analytics-mcp -->
 # Csv Analytics MCP
 
 [![MEOK AI Labs](https://img.shields.io/badge/MEOK-AI%20Labs-667eea)](https://meok.ai)
