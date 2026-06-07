@@ -1,0 +1,24 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "csv-analytics-mcp",
+    "description": "Csv Analytics MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "csv-analytics-mcp"
+      }
+    ],
+    "capabilities": [
+      "load_csv",
+      "query_data",
+      "describe_columns",
+      "aggregate",
+      "export_chart_data",
+      "pivot_table"
+    ]
+  }
+}

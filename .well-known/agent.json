@@ -1,0 +1,77 @@
+{
+  "name": "csv-analytics-mcp",
+  "description": "Csv Analytics MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/csv-analytics-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "load_csv",
+      "name": "Load Csv",
+      "description": "load_csv via csv-analytics-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "query_data",
+      "name": "Query Data",
+      "description": "query_data via csv-analytics-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "describe_columns",
+      "name": "Describe Columns",
+      "description": "describe_columns via csv-analytics-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "aggregate",
+      "name": "Aggregate",
+      "description": "aggregate via csv-analytics-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "export_chart_data",
+      "name": "Export Chart Data",
+      "description": "export_chart_data via csv-analytics-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "pivot_table",
+      "name": "Pivot Table",
+      "description": "pivot_table via csv-analytics-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
