@@ -1,0 +1,33 @@
+# Csv Analytics MCP
+
+> Spreadsheet and CSV analysis toolkit: load files, filter/query data, compute statistics, create a...
+
+`csv-analytics-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+
+## Install
+
+```bash
+pip install csv-analytics-mcp
+```
+
+Or run without installing:
+
+```bash
+uvx csv-analytics-mcp
+```
+
+## Tools
+
+- `load_csv` — Load a CSV file into memory for analysis. The dataset is stored under
+- `query_data` — Query a loaded dataset with filtering, column selection, and sorting.
+- `describe_columns` — Get detailed statistics for every column in a dataset:
+- `aggregate` — Aggregate data with GROUP BY and compute metrics.
+- `export_chart_data` — Export data in a chart-ready format. Output is compatible with Chart.js,
+- `pivot_table` — Create a pivot table from a dataset. Reshapes data by grouping rows
+
+## Links
+
+- Source: https://github.com/CSOAI-ORG/csv-analytics-mcp
+- PyPI: https://pypi.org/project/csv-analytics-mcp/
+- MEOK AI Labs: https://meok.ai
+- Council of AI: https://councilof.ai
