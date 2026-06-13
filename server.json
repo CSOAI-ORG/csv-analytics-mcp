@@ -4,9 +4,8 @@
   "version": "1.0.9",
   "description": "Csv Analytics MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/csv-analytics-mcp",
-    "source": "https://github.com/CSOAI-ORG/csv-analytics-mcp"
+    "source": "github"
   },
   "packages": [
     {
