@@ -1,4 +1,4 @@
-<!-- mcp-name: CSOAI-ORG/csv-analytics-mcp -->
+<!-- mcp-name: io.github.CSOAI-ORG/csv-analytics-mcp -->
 [![MCP Scorecard: 86/100](https://img.shields.io/badge/proofof.ai-86%2F100-5b21b6)](https://proofof.ai/scorecard/csv-analytics-mcp.html)
 
 # Csv Analytics MCP
@@ -138,3 +138,8 @@ Once configured, ask your assistant, for example:
 - "Use `load_csv` to …"
 - "Use `query_data` to …"
 - "Use `describe_columns` to …"
+
+## See also
+
+MEOK compliance MCP fleet:
+[`csv-tools-ai-mcp`](https://github.com/CSOAI-ORG/csv-tools-ai-mcp)
